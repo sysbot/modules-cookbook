@@ -47,6 +47,13 @@ when 'ubuntu', 'debian'
     mode '0644'
   end
 
+  template "/etc/init/module-init-tools.conf" do
+    source "module-init-tools.conf.erb"
+    owner "root"
+    group "root"
+    mode "0644"
+  end
+
   service 'module-init-tools' do
     provider Chef::Provider::Service::Upstart
   end
