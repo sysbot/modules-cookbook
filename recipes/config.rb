@@ -17,7 +17,7 @@
 # limitations under the License.
 #
 
-return unless supported?
+#return unless supported?
 
 node['modules']['packages'].each do |p|
   package p
