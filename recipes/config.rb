@@ -39,7 +39,7 @@ end
 
 # using upstart
 case node['platform']
-when 'ubuntu'
+when 'ubuntu', 'debian'
   cookbook_file '/etc/init/modules-load.conf' do
     source 'modules-load.conf'
     owner 'root'
