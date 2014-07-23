@@ -1,9 +1,9 @@
 #
 # Cookbook Name:: modules
-# Provider:: modules
+# Provider:: blacklist
 # Author:: Guilhem Lettron <guilhem.lettron@youscribe.com>
 #
-# Copyright 2012, Societe Publica.
+# Copyright 2014, Ooyala
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -20,16 +20,15 @@
 
 use_inline_resources
 
-include Chef::DSL::IncludeRecipe
-
 action :add do
   template path do
+    cookbook "modules"
     source "blacklist-name.conf.erb"
     owner "root"
     group "root"
     mode "0644"
     variables(
-      modules new_resource.modules
+      :mods => new_resource.mods
     )
   end
 end
