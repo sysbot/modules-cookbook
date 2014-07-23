@@ -44,6 +44,6 @@ action :remove do
 end
 
 def path
-  new_resource.path ? new_resource.path : "/etc/modules.d/blacklist-#{new_resource.name}.conf"
+  new_resource.path ? new_resource.path : "/etc/modprobe.d/blacklist-#{new_resource.name}.conf"
 end
 
